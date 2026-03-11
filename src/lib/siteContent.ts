@@ -196,10 +196,10 @@ export type SiteDictionary = {
 };
 
 const baseProjects = [
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1759310347467-578dfd846229?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1747407823747-bcb76a476350?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1768321901750-f7b96d774456?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1756705406506-50500a12463c?auto=format&fit=crop&w=1200&q=80",
 ] as const;
 
 type BaseLocale = Exclude<Locale, "uk">;
