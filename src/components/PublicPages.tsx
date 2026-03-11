@@ -65,27 +65,27 @@ const serviceVisuals = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1676803210608-39cdef6a505c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1676802037786-3697d60497ae?auto=format&fit=crop&w=1600&q=80",
     alt: "Turnkey house construction",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1747407823747-bcb76a476350?auto=format&fit=crop&w=1600&q=80",
     alt: "Industrial fence installation",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1768321901750-f7b96d774456?auto=format&fit=crop&w=1600&q=80",
     alt: "Interior and exterior construction works",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1756705406506-50500a12463c?auto=format&fit=crop&w=1600&q=80",
     alt: "Sandwich panel construction",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1755168648692-ef8937b7e63e?auto=format&fit=crop&w=1600&q=80",
     alt: "Diamond drilling and technical works",
   },
   {
