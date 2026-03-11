@@ -197,9 +197,9 @@ export type SiteDictionary = {
 
 const baseProjects = [
   "https://images.unsplash.com/photo-1759310347467-578dfd846229?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1747407823747-bcb76a476350?auto=format&fit=crop&w=1200&q=80",
+  "https://plus.unsplash.com/premium_photo-1661953313996-beaab35d4bcf?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1768321901750-f7b96d774456?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1756705406506-50500a12463c?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1759310347407-b0dbfeb8745d?auto=format&fit=crop&w=1200&q=80",
 ] as const;
 
 type BaseLocale = Exclude<Locale, "uk">;
@@ -1562,6 +1562,12 @@ const ukContent: SiteDictionary = {
     projectsTag: "Проєкти / портфоліо",
     projectsTitle: "Кейси, які створюють довіру",
     projectsIntro: "Великі фото і зрозуміла структура допомагають швидко показати масштаб і рівень робіт.",
+    projects: [
+      { title: "Проєкт складського приміщення", subtitle: "Монтаж несучих конструкцій і оболонки будівлі", image: baseProjects[0] },
+      { title: "Монтаж промислового огородження", subtitle: "Периметральна безпека для комерційного об'єкта", image: baseProjects[1] },
+      { title: "Реконструкція квартири", subtitle: "Комплексне внутрішнє оздоблення та інженерна підготовка", image: baseProjects[2] },
+      { title: "Монтаж сендвіч-панелей", subtitle: "Швидке зведення торгових і промислових приміщень", image: baseProjects[3] },
+    ],
     beforeAfter: {
       beforeLabel: "До",
       beforeTitle: "Аналіз об'єкта і підготовка",

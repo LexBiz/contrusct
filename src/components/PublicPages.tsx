@@ -49,8 +49,7 @@ function founderCopy(locale: Locale) {
 
 const serviceVisuals = [
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1726776068646-d7022f71faf2?auto=format&fit=crop&w=1600&q=80",
+    image: "/high-current-installation.jpg",
     alt: "High-current electrical installation",
   },
   {
@@ -74,23 +73,19 @@ const serviceVisuals = [
     alt: "Industrial fence installation",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1768321901750-f7b96d774456?auto=format&fit=crop&w=1600&q=80",
+    image: "/interior-exterior-works.jpg",
     alt: "Interior and exterior construction works",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1756705406506-50500a12463c?auto=format&fit=crop&w=1600&q=80",
+    image: "/sandwich-panel-installation.jpg",
     alt: "Sandwich panel construction",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1755168648692-ef8937b7e63e?auto=format&fit=crop&w=1600&q=80",
+    image: "/diamond-drilling.jpg",
     alt: "Diamond drilling and technical works",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+    image: "/earthworks.jpg",
     alt: "Earthworks and site preparation",
   },
 ] as const;

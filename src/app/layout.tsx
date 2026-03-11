@@ -13,7 +13,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://construct-vs-company.example"),
+  metadataBase: new URL("https://constructvs.cz"),
   title: "ConStrukT VS Company | Строительные решения любой сложности",
   description:
     "ConStrukT VS Company выполняет строительные, инженерные и монтажные работы: от ремонта квартир до промышленных объектов по всей Европе.",
