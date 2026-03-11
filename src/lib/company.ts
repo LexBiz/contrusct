@@ -1,0 +1,19 @@
+export const company = {
+  name: "ConStrukT VS Company",
+  legalName: "ConStrukT VS Compani s.r.o.",
+  street: "Sokolska 1883/8",
+  cityLine: "120 00 Praha 2 - Nove Mesto",
+  countryCs: "Ceska republika",
+  countryUk: "Czech Republic",
+  countryEn: "Czech Republic",
+  countryDe: "Tschechische Republik",
+  ico: "24503215",
+  dic: "CZ24503215",
+  email: "ConStrukT.VS@seznam.cz",
+  phone: "",
+  dataBox: "49t6e8",
+  experience: "10+ years",
+  registryCourt: "Mestsky soud v Praze, C 442315",
+  legalForm: "Spolecnost s rucenim omezenym",
+} as const;
+
