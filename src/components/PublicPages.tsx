@@ -51,42 +51,51 @@ const serviceVisuals = [
   {
     image: "/high-current-installation.jpg",
     alt: "High-current electrical installation",
+    fit: "contain",
   },
   {
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
     alt: "Low-current cabling and networking",
+    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80",
     alt: "Photovoltaics and heat pump systems",
+    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1676802037786-3697d60497ae?auto=format&fit=crop&w=1600&q=80",
     alt: "Turnkey house construction",
+    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1747407823747-bcb76a476350?auto=format&fit=crop&w=1600&q=80",
     alt: "Industrial fence installation",
+    fit: "cover",
   },
   {
     image: "/interior-exterior-works.jpg",
     alt: "Interior and exterior construction works",
+    fit: "contain",
   },
   {
     image: "/sandwich-panel-installation.jpg",
     alt: "Sandwich panel construction",
+    fit: "contain",
   },
   {
     image: "/diamond-drilling.jpg",
     alt: "Diamond drilling and technical works",
+    fit: "cover",
   },
   {
     image: "/earthworks.jpg",
     alt: "Earthworks and site preparation",
+    fit: "contain",
   },
 ] as const;
 
@@ -220,11 +229,19 @@ export function HomePage({ locale }: PageProps) {
             {home.services.map((service, index) => (
               <article className="service-card" key={service.title}>
                 <div className="service-card-media">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={serviceVisuals[index % serviceVisuals.length].image}
-                    alt={serviceVisuals[index % serviceVisuals.length].alt}
-                  />
+                  {(() => {
+                    const visual = serviceVisuals[index % serviceVisuals.length];
+                    return (
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={visual.image}
+                          alt={visual.alt}
+                          className={visual.fit === "contain" ? "service-image-contain" : undefined}
+                        />
+                      </>
+                    );
+                  })()}
                 </div>
                 <div className="service-card-top">
                   <span className="service-index">{String(index + 1).padStart(2, "0")}</span>
@@ -412,11 +429,19 @@ export function ServicesPage({ locale }: PageProps) {
           {content.home.services.map((service, index) => (
             <article className="service-card" key={service.title}>
               <div className="service-card-media">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={serviceVisuals[index % serviceVisuals.length].image}
-                  alt={serviceVisuals[index % serviceVisuals.length].alt}
-                />
+                {(() => {
+                  const visual = serviceVisuals[index % serviceVisuals.length];
+                  return (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={visual.image}
+                        alt={visual.alt}
+                        className={visual.fit === "contain" ? "service-image-contain" : undefined}
+                      />
+                    </>
+                  );
+                })()}
               </div>
               <div className="service-card-top">
                 <span className="service-index">{String(index + 1).padStart(2, "0")}</span>
@@ -438,11 +463,19 @@ export function ServicesPage({ locale }: PageProps) {
               key={`${service.title}-showcase`}
             >
               <div className="service-showcase-image">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={serviceVisuals[index % serviceVisuals.length].image}
-                  alt={serviceVisuals[index % serviceVisuals.length].alt}
-                />
+                {(() => {
+                  const visual = serviceVisuals[index % serviceVisuals.length];
+                  return (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={visual.image}
+                        alt={visual.alt}
+                        className={visual.fit === "contain" ? "service-image-contain" : undefined}
+                      />
+                    </>
+                  );
+                })()}
                 <div className="service-showcase-overlay" />
               </div>
               <div className="service-showcase-copy">
