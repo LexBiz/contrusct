@@ -62,6 +62,17 @@ textarea {
   margin: 0 auto;
 }
 
+.hero-content > *,
+.about-grid > *,
+.lead-grid > *,
+.page-copy-grid > *,
+.footer-grid-main > *,
+.service-showcase > *,
+.review-panel > *,
+.admin-grid > * {
+  min-width: 0;
+}
+
 .site-shell {
   min-height: 100vh;
 }
@@ -290,6 +301,7 @@ p {
   display: flex;
   align-items: center;
   gap: 24px;
+  z-index: 65;
 }
 
 .header-nav,
@@ -471,6 +483,10 @@ p {
   padding: 28px;
 }
 
+.hero-panel {
+  backdrop-filter: blur(14px);
+}
+
 .panel-label,
 .service-index,
 .before-after-label,
@@ -516,6 +532,11 @@ p {
   padding: 24px 0;
 }
 
+.metrics-grid > div {
+  padding: 18px 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .metrics-grid strong {
   display: block;
   margin-bottom: 10px;
@@ -534,6 +555,10 @@ p {
 
 .section-head {
   margin-bottom: 38px;
+}
+
+.section-head h2 {
+  max-width: 14ch;
 }
 
 .max-text {
@@ -1136,9 +1161,37 @@ select option {
   .service-showcase-reverse {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .section-head h2 {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 860px) {
+  .site-header {
+    top: 0;
+  }
+
+  .header-inner {
+    min-height: 74px;
+    gap: 14px;
+  }
+
+  .brand-logo {
+    gap: 12px;
+    max-width: calc(100% - 56px);
+  }
+
+  .brand-logo-copy strong {
+    font-size: 0.94rem;
+    line-height: 1.05;
+  }
+
+  .brand-logo-copy small {
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+  }
+
   .header-toggle {
     display: inline-flex;
     align-items: center;
@@ -1158,6 +1211,8 @@ select option {
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(10, 10, 10, 0.98);
     box-shadow: var(--shadow);
+    max-height: calc(100dvh - 106px);
+    overflow-y: auto;
   }
 
   .header-nav-wrap.open {
@@ -1169,6 +1224,7 @@ select option {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .header-nav a,
@@ -1176,8 +1232,16 @@ select option {
     width: 100%;
   }
 
+  .header-nav a {
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
   .lang-switch {
     justify-content: center;
+    padding: 8px;
   }
 
   .site-backdrop {
@@ -1190,7 +1254,85 @@ select option {
 
   .hero-section {
     min-height: auto;
-    padding-top: 36px;
+    padding: 30px 0 40px;
+  }
+
+  .hero-content {
+    gap: 18px;
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 14px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 9vw, 4.1rem);
+    line-height: 0.96;
+  }
+
+  .hero-text {
+    margin-top: 0;
+    font-size: 0.98rem;
+    line-height: 1.72;
+    max-width: 100%;
+  }
+
+  .hero-list {
+    margin-top: 4px;
+  }
+
+  .hero-list span {
+    font-size: 0.84rem;
+    padding: 9px 12px;
+  }
+
+  .hero-actions {
+    margin-top: 6px;
+  }
+
+  .hero-note {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .hero-panel {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .metric-stack {
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .metric-stack strong {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .content-section,
+  .inner-page,
+  .admin-page,
+  .admin-login-page {
+    padding: 76px 0;
+  }
+
+  .section-head {
+    margin-bottom: 26px;
+  }
+
+  .section-text {
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
+
+  .metrics-grid {
+    gap: 16px;
+    padding: 18px 0;
+  }
+
+  .metrics-grid > div {
+    padding: 0 0 14px;
   }
 
   .service-grid,
@@ -1216,7 +1358,54 @@ select option {
   }
 
   .service-showcase-copy {
-    padding: 26px;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .service-card,
+  .glass-card,
+  .advantage-card,
+  .trust-card,
+  .legal-card,
+  .company-card,
+  .estimate-card,
+  .contact-form-new,
+  .before-after-card,
+  .step-card,
+  .mini-stat-card,
+  .admin-card,
+  .admin-list-card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .project-card-body {
+    padding: 18px;
+  }
+
+  .estimate-result {
+    padding: 18px;
+  }
+
+  .review-panel {
+    padding: 22px;
+  }
+
+  .footer-grid-main {
+    gap: 20px;
+  }
+
+  .site-footer {
+    padding: 72px 0 86px;
+  }
+
+  .cookie-banner {
+    width: min(440px, calc(100vw - 20px));
+  }
+
+  .cookie-banner-card {
+    border-radius: 22px;
+    padding: 18px;
   }
 }
 
@@ -1225,12 +1414,30 @@ select option {
     width: min(1240px, calc(100% - 20px));
   }
 
+  .header-inner {
+    min-height: 68px;
+  }
+
+  .brand-logo-compact .brand-logo-copy {
+    max-width: 150px;
+  }
+
+  .brand-logo-compact .brand-logo-copy small {
+    display: none;
+  }
+
+  .brand-logo-visual {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+  }
+
   .content-section,
   .inner-page,
   .admin-page,
   .admin-login-page,
   .site-footer {
-    padding: 80px 0;
+    padding: 64px 0;
   }
 
   .hero-actions,
@@ -1249,6 +1456,7 @@ select option {
   .btn-primary,
   .btn-secondary {
     width: 100%;
+    min-height: 50px;
   }
 
   .hero-list span,
@@ -1257,28 +1465,143 @@ select option {
     text-align: center;
   }
 
+  .hero-section {
+    padding: 20px 0 30px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    letter-spacing: -0.05em;
+  }
+
+  .hero-text,
+  .hero-note,
+  .section-text,
+  .service-card p,
+  .service-showcase-copy p,
+  .contact-form-head p,
+  .company-card p,
+  .review-panel p,
+  .legal-card p {
+    font-size: 0.92rem;
+    line-height: 1.68;
+  }
+
+  .section-tag {
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .section-tag::before {
+    width: 18px;
+  }
+
   .brand-logo-visual-hero {
-    width: 124px;
-    height: 124px;
+    width: 108px;
+    height: 108px;
+    border-radius: 28px;
   }
 
   .service-card-media {
-    margin: -28px -28px 18px;
-    height: 200px;
+    margin: -24px -24px 16px;
+    height: 180px;
   }
 
   .service-showcase-image {
-    min-height: 240px;
+    min-height: 220px;
   }
 
   .service-showcase-copy {
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .service-card,
+  .glass-card,
+  .advantage-card,
+  .trust-card,
+  .legal-card,
+  .company-card,
+  .estimate-card,
+  .contact-form-new,
+  .before-after-card,
+  .step-card,
+  .mini-stat-card,
+  .admin-card,
+  .admin-list-card,
+  .hero-panel {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .metrics-grid {
     gap: 14px;
-    padding: 22px;
+  }
+
+  .metrics-grid > div {
+    padding-bottom: 12px;
+  }
+
+  .estimate-controls,
+  .form-grid-new,
+  .company-card-grid,
+  .lead-meta-grid {
+    gap: 12px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 13px 14px;
+    font-size: 0.95rem;
+  }
+
+  textarea {
+    min-height: 132px;
+  }
+
+  .estimate-result strong {
+    font-size: clamp(1.5rem, 8vw, 2.2rem);
+  }
+
+  .step-number {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+
+  .project-card img {
+    aspect-ratio: 16 / 11;
+  }
+
+  .project-card-body {
+    padding: 16px;
+  }
+
+  .review-panel {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .footer-grid-main {
+    gap: 18px;
+  }
+
+  .footer-links-block,
+  .footer-brand-block {
+    gap: 10px;
   }
 
   .cookie-banner {
     right: 10px;
     bottom: 10px;
     width: calc(100vw - 20px);
+  }
+
+  .cookie-banner-card {
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
   }
 }
