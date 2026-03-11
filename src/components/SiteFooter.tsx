@@ -16,7 +16,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
       ? company.countryDe
       : locale === "en"
         ? company.countryEn
-        : locale === "ru"
+        : locale === "ru" || locale === "uk"
           ? company.countryUk
           : company.countryCs;
 

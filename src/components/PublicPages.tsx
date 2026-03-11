@@ -13,6 +13,26 @@ type PageProps = {
 const serviceVisuals = [
   {
     image:
+      "https://plus.unsplash.com/premium_photo-1726776068646-d7022f71faf2?auto=format&fit=crop&w=1600&q=80",
+    alt: "High-current electrical installation",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+    alt: "Low-current cabling and networking",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80",
+    alt: "Photovoltaics and heat pump systems",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1676803210608-39cdef6a505c?auto=format&fit=crop&w=1600&q=80",
+    alt: "Turnkey house construction",
+  },
+  {
+    image:
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80",
     alt: "Industrial fence installation",
   },
@@ -478,13 +498,13 @@ export async function CareerPage({ locale }: PageProps) {
                 const title =
                   locale === "cs"
                     ? vacancy.titleCs
-                    : locale === "ru"
+                    : locale === "ru" || locale === "uk"
                       ? vacancy.titleUk
                       : vacancy.titleCs;
                 const description =
                   locale === "cs"
                     ? vacancy.descriptionCs
-                    : locale === "ru"
+                    : locale === "ru" || locale === "uk"
                       ? vacancy.descriptionUk
                       : vacancy.descriptionCs;
                 return (

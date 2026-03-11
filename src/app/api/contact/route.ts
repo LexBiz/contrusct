@@ -25,6 +25,7 @@ function successMessage(locale: string) {
   if (locale === "en") return "Request received. We will contact you within 24 hours.";
   if (locale === "de") return "Anfrage erhalten. Wir melden uns innerhalb von 24 Stunden.";
   if (locale === "ru") return "Запрос получен. Мы свяжемся с вами в течение 24 часов.";
+  if (locale === "uk") return "Запит отримано. Ми зв'яжемося з вами протягом 24 годин.";
   return "Poptavka byla prijata. Ozveme se do 24 hodin.";
 }
 

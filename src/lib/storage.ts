@@ -91,7 +91,7 @@ function normalizeSubmission(row: Partial<ContactSubmission>): ContactSubmission
     id: typeof row.id === "string" && row.id ? row.id : randomUUID(),
     createdAt,
     locale:
-      row.locale === "en" || row.locale === "de" || row.locale === "ru" || row.locale === "cs"
+      row.locale === "en" || row.locale === "de" || row.locale === "ru" || row.locale === "uk" || row.locale === "cs"
         ? row.locale
         : "cs",
     fullName: String(row.fullName ?? "").trim(),

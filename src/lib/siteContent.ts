@@ -202,7 +202,9 @@ const baseProjects = [
   "https://images.unsplash.com/photo-1512403754473-27835f7b9984?auto=format&fit=crop&w=1200&q=80",
 ] as const;
 
-export const siteContent: Record<Locale, SiteDictionary> = {
+type BaseLocale = Exclude<Locale, "uk">;
+
+export const siteContent: Record<BaseLocale, SiteDictionary> = {
   cs: {
     localeLabel: "Čeština",
     languageShort: "CZ",
@@ -271,6 +273,26 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       servicesIntro:
         "Struktura služeb je navržena tak, aby klient rychle pochopil, s čím umíme pomoci a kde přinášíme největší hodnotu.",
       services: [
+        {
+          title: "Silnoproud",
+          text: "Kompletní silnoproudé elektroinstalace pro byty, domy, komerční objekty a technicky náročné provozy včetně rozvaděčů a napájecích tras.",
+          items: ["Rozvaděče a jištění", "Napájecí kabelové trasy", "Kompletní silová infrastruktura"],
+        },
+        {
+          title: "Slaboproudá elektroinstalace",
+          text: "Instalace datových, bezpečnostních a komunikačních systémů s důrazem na čisté kabeláže, funkčnost a budoucí rozšiřitelnost.",
+          items: ["Datové rozvody a racky", "CCTV a přístupové systémy", "Strukturovaná kabeláž"],
+        },
+        {
+          title: "Fotovoltaika a tepelné čerpadlo",
+          text: "Návrh a montáž fotovoltaických systémů a návazných technologií pro úsporné a energeticky efektivní objekty.",
+          items: ["Střešní FVE systémy", "Invertory a technické zapojení", "Řešení pro rodinné domy i firmy"],
+        },
+        {
+          title: "Výstavba domů na klíč",
+          text: "Kompletní realizace rodinných domů na klíč od přípravy stavby přes hrubou konstrukci až po finální dokončení.",
+          items: ["Kompletní řízení stavby", "Koordinace profesí", "Předání hotového domu"],
+        },
         {
           title: "Výběr a montáž oplocení",
           text: "Montáž kovových, panelových, průmyslových a dekorativních plotů s návrhem optimálního řešení podle rozpočtu, designu a životnosti.",
@@ -523,6 +545,10 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       success: "Děkujeme. Ozveme se vám do 24 hodin.",
       error: "Odeslání se nepodařilo. Zkuste to prosím znovu.",
       workTypes: [
+        { value: "power", label: "Silnoproud", rate: 5900 },
+        { value: "lowcurrent", label: "Slaboproudá elektroinstalace", rate: 4800 },
+        { value: "solar", label: "Fotovoltaika a tepelné čerpadlo", rate: 7800 },
+        { value: "turnkey", label: "Výstavba domů na klíč", rate: 12500 },
         { value: "fences", label: "Ploty a oplocení", rate: 4200 },
         { value: "interior", label: "Interiérové práce", rate: 6200 },
         { value: "exterior", label: "Exteriérové práce", rate: 5600 },
@@ -610,6 +636,26 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       servicesIntro:
         "Our service structure is built to show where we deliver the highest value in speed, workmanship and project organization.",
       services: [
+        {
+          title: "High-current electrical installation",
+          text: "Complete power electrical installations for apartments, houses, commercial units and technically demanding facilities, including switchboards and main supply routes.",
+          items: ["Switchboards and protection", "Power cable routes", "Complete power infrastructure"],
+        },
+        {
+          title: "Low-current electrical systems",
+          text: "Installation of data, security and communication systems with clean cabling, reliability and future scalability in mind.",
+          items: ["Data cabling and racks", "CCTV and access control", "Structured low-voltage networks"],
+        },
+        {
+          title: "Photovoltaics and heat pumps",
+          text: "Design and installation of photovoltaic systems and related technologies for energy-efficient homes and commercial properties.",
+          items: ["Roof-mounted PV systems", "Inverters and technical wiring", "Solutions for homes and businesses"],
+        },
+        {
+          title: "Turnkey house construction",
+          text: "Complete delivery of family houses on a turnkey basis, from site preparation and shell construction to final finishing.",
+          items: ["Full project coordination", "Trade coordination", "Ready-to-live handover"],
+        },
         {
           title: "Fence selection and installation",
           text: "Installation of metal, panel, industrial and decorative fencing with the right balance of budget, design and durability.",
@@ -799,6 +845,10 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       success: "Thank you. We will contact you within 24 hours.",
       error: "The request could not be sent. Please try again.",
       workTypes: [
+        { value: "power", label: "High-current electrical installation", rate: 5900 },
+        { value: "lowcurrent", label: "Low-current electrical systems", rate: 4800 },
+        { value: "solar", label: "Photovoltaics and heat pumps", rate: 7800 },
+        { value: "turnkey", label: "Turnkey house construction", rate: 12500 },
         { value: "fences", label: "Fences and barriers", rate: 4200 },
         { value: "interior", label: "Interior works", rate: 6200 },
         { value: "exterior", label: "Exterior works", rate: 5600 },
@@ -881,6 +931,26 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       servicesIntro:
         "Die Leistungsstruktur ist so aufgebaut, dass der Kunde schnell erkennt, wo wir den größten Mehrwert in Qualität, Geschwindigkeit und Organisation liefern.",
       services: [
+        {
+          title: "Starkstrom",
+          text: "Komplette Starkstrominstallationen für Wohnungen, Häuser, Gewerbeobjekte und technisch anspruchsvolle Anlagen inklusive Verteilungen und Einspeisewegen.",
+          items: ["Verteilungen und Schutztechnik", "Energie-Kabeltrassen", "Komplette Starkstrom-Infrastruktur"],
+        },
+        {
+          title: "Schwachstrominstallation",
+          text: "Installation von Daten-, Sicherheits- und Kommunikationssystemen mit sauberer Verkabelung, Zuverlässigkeit und Erweiterbarkeit.",
+          items: ["Datennetze und Racks", "CCTV und Zutrittskontrolle", "Strukturierte Verkabelung"],
+        },
+        {
+          title: "Photovoltaik und Wärmepumpe",
+          text: "Planung und Montage von Photovoltaiksystemen und zugehörigen Technologien für energieeffiziente Wohn- und Gewerbeobjekte.",
+          items: ["PV-Anlagen auf Dächern", "Wechselrichter und technische Einbindung", "Lösungen für Häuser und Firmen"],
+        },
+        {
+          title: "Schlüsselfertiger Hausbau",
+          text: "Komplette Realisierung von Einfamilienhäusern schlüsselfertig - von der Baustellenvorbereitung bis zur finalen Übergabe.",
+          items: ["Ganzheitliche Baukoordination", "Koordination aller Gewerke", "Bezugsfertige Übergabe"],
+        },
         {
           title: "Auswahl und Montage von Zäunen",
           text: "Montage von Metall-, Panel-, Industrie- und Designzäunen mit der passenden Lösung in Bezug auf Budget, Design und Lebensdauer.",
@@ -1070,6 +1140,10 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       success: "Vielen Dank. Wir melden uns innerhalb von 24 Stunden.",
       error: "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
       workTypes: [
+        { value: "power", label: "Starkstrom", rate: 5900 },
+        { value: "lowcurrent", label: "Schwachstrominstallation", rate: 4800 },
+        { value: "solar", label: "Photovoltaik und Wärmepumpe", rate: 7800 },
+        { value: "turnkey", label: "Schlüsselfertiger Hausbau", rate: 12500 },
         { value: "fences", label: "Zäune und Einfriedungen", rate: 4200 },
         { value: "interior", label: "Innenarbeiten", rate: 6200 },
         { value: "exterior", label: "Außenarbeiten", rate: 5600 },
@@ -1152,6 +1226,26 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       servicesIntro:
         "Структура услуг выстроена так, чтобы клиент быстро понял, где мы можем дать лучший результат по качеству, скорости и организации.",
       services: [
+        {
+          title: "Силовая электрика",
+          text: "Комплексные силовые электромонтажные работы для квартир, домов, коммерческих объектов и технически сложных площадок, включая щиты и магистральные линии.",
+          items: ["Электрощиты и защита", "Силовые кабельные трассы", "Полная силовая инфраструктура"],
+        },
+        {
+          title: "Слабострумова електроінсталяція",
+          text: "Монтаж слаботочных, сетевых и охранных систем с аккуратной кабельной организацией, надежностью и запасом для расширения.",
+          items: ["Сетевые линии и rack-решения", "CCTV и контроль доступа", "Структурированная кабельная система"],
+        },
+        {
+          title: "Фотовольтаика и тепловые насосы",
+          text: "Проектирование и монтаж солнечных систем и смежных энергоэффективных решений для домов и коммерческих объектов.",
+          items: ["Кровельные PV-системы", "Инверторы и техническое подключение", "Решения для домов и бизнеса"],
+        },
+        {
+          title: "Строительство домов под ключ",
+          text: "Полный цикл строительства частных домов под ключ: от подготовки участка и коробки здания до финальной сдачи готового дома.",
+          items: ["Полное управление строительством", "Координация всех подрядных работ", "Готовый дом к передаче клиенту"],
+        },
         {
           title: "Выбор и установка заборов",
           text: "Монтаж металлических, панельных, промышленных и декоративных ограждений с подбором решения по бюджету, дизайну и сроку службы.",
@@ -1341,6 +1435,10 @@ export const siteContent: Record<Locale, SiteDictionary> = {
       success: "Спасибо. Мы свяжемся с вами в течение 24 часов.",
       error: "Не удалось отправить запрос. Попробуйте еще раз.",
       workTypes: [
+        { value: "power", label: "Силовая электрика", rate: 5900 },
+        { value: "lowcurrent", label: "Слабострумова електроінсталяція", rate: 4800 },
+        { value: "solar", label: "Фотовольтаика и тепловые насосы", rate: 7800 },
+        { value: "turnkey", label: "Строительство домов под ключ", rate: 12500 },
         { value: "fences", label: "Заборы и ограждения", rate: 4200 },
         { value: "interior", label: "Интерьерные работы", rate: 6200 },
         { value: "exterior", label: "Экстерьерные работы", rate: 5600 },
@@ -1372,6 +1470,275 @@ export const siteContent: Record<Locale, SiteDictionary> = {
   },
 };
 
+const ukContent: SiteDictionary = {
+  ...siteContent.ru,
+  localeLabel: "Українська",
+  languageShort: "UA",
+  nav: {
+    items: [
+      { href: "/about", label: "Про компанію" },
+      { href: "/services", label: "Послуги" },
+      { href: "/career", label: "Кар'єра" },
+      { href: "/contacts", label: "Контакти" },
+    ],
+    cta: "Отримати розрахунок",
+    menu: "Меню",
+  },
+  home: {
+    ...siteContent.ru.home,
+    heroTitle: "Будівельні рішення для проєктів будь-якої складності",
+    heroText:
+      "Від ремонту квартир до великих промислових об'єктів. Наші спеціалісти мають понад 10 років досвіду на будівельних проєктах по всій Європі.",
+    heroNote: "Гарантія якості, точні терміни та прозора комунікація з клієнтом.",
+    heroPanelLabel: "Європейський стандарт реалізації",
+    heroMetrics: [
+      { value: "10+", label: "років досвіду спеціалістів" },
+      { value: "24 год", label: "на підготовку первинного розрахунку" },
+      { value: "360°", label: "від дрібного ремонту до індустріальних об'єктів" },
+    ],
+    aboutTag: "Про компанію",
+    aboutParagraphs: [
+      "ConStrukT VS Company — це команда досвідчених спеціалістів у сфері будівництва, реконструкції та інженерних робіт. Ми беремо на себе завдання різного масштабу: від невеликих ремонтів до великих промислових об'єктів.",
+      "Наші майстри мають багаторічний досвід роботи по всій Європі, тому вміють тримати якість, темп і дисципліну на складних об'єктах. Для нас задоволений клієнт — головний показник якості.",
+    ],
+    aboutCards: [
+      { title: "Якість", text: "Високий стандарт виконання та уважний контроль на кожному етапі." },
+      { title: "Терміни", text: "Реалістичне планування та дотримання погодженого графіка." },
+      { title: "Підхід", text: "Кожен проєкт адаптується під завдання клієнта та особливості об'єкта." },
+      { title: "Прозорість", text: "Зрозумілий бюджет, чіткі етапи та чесна комунікація без сюрпризів." },
+    ],
+    servicesTitle: "Широкий спектр будівельних і монтажних робіт",
+    servicesIntro:
+      "Структура послуг побудована так, щоб клієнт швидко зрозумів, де ми можемо дати найкращий результат за якістю, швидкістю та організацією.",
+    services: [
+      {
+        title: "Силова електрика",
+        text: "Комплексні силові електромонтажні роботи для квартир, будинків, комерційних об'єктів і технічно складних майданчиків, включаючи щити та магістральні лінії.",
+        items: ["Електрощити та захист", "Силові кабельні траси", "Повна силова інфраструктура"],
+      },
+      {
+        title: "Слабкострумова електроінсталяція",
+        text: "Монтаж слабкострумових, мережевих та охоронних систем з акуратною кабельною організацією, надійністю та запасом для розширення.",
+        items: ["Мережеві лінії та rack-рішення", "CCTV і контроль доступу", "Структурована кабельна система"],
+      },
+      {
+        title: "Фотовольтаїка та теплові насоси",
+        text: "Проєктування і монтаж сонячних систем та суміжних енергоефективних рішень для будинків і комерційних об'єктів.",
+        items: ["Дахові PV-системи", "Інвертори та технічне підключення", "Рішення для будинків і бізнесу"],
+      },
+      {
+        title: "Будівництво будинків під ключ",
+        text: "Повний цикл будівництва приватних будинків під ключ: від підготовки ділянки та коробки будівлі до фінальної здачі готового будинку.",
+        items: ["Повне управління будівництвом", "Координація всіх підрядних робіт", "Готовий будинок до передачі клієнту"],
+      },
+      {
+        title: "Вибір та встановлення парканів",
+        text: "Монтаж металевих, панельних, промислових і декоративних огорож з підбором рішення за бюджетом, дизайном і строком служби.",
+        items: ["Металеві паркани", "Панельні огорожі", "Ворота і хвіртки"],
+      },
+      {
+        title: "Інтер'єрні та екстер'єрні роботи",
+        text: "Повний цикл внутрішніх і зовнішніх робіт для квартир, будинків, комерційних приміщень і проєктів реконструкції.",
+        items: ["Гіпсокартон, штукатурка, фарбування", "Плитка і стелі", "Фасади, утеплення, облицювання"],
+      },
+      {
+        title: "Монтаж сендвіч-панелей",
+        text: "Професійний монтаж для складів, ангарів, виробничих і торгових приміщень з контролем геометрії та герметичності.",
+        items: ["Склади та ангари", "Торгові приміщення", "Промислові будівлі"],
+      },
+      {
+        title: "Алмазне буріння",
+        text: "Точне кернове буріння отворів у бетоні та залізобетоні для комунікацій, вентиляції та інженерних систем.",
+        items: ["Комунікації", "Вентиляція", "Електричні системи"],
+      },
+      {
+        title: "Земляні роботи",
+        text: "Підготовка майданчиків, траншеї, фундаменти, вирівнювання та розчищення територій для приватних і великих об'єктів.",
+        items: ["Траншеї та фундаменти", "Підготовка майданчика", "Демонтаж і розчищення"],
+      },
+    ],
+    advantagesTag: "Чому ConStrukT VS",
+    advantagesTitle: "Надійність, швидкість і чітке управління проєктом",
+    projectsTag: "Проєкти / портфоліо",
+    projectsTitle: "Кейси, які створюють довіру",
+    projectsIntro: "Великі фото і зрозуміла структура допомагають швидко показати масштаб і рівень робіт.",
+    beforeAfter: {
+      beforeLabel: "До",
+      beforeTitle: "Аналіз об'єкта і підготовка",
+      beforeText: "Фіксуємо вихідний стан, завдання, обмеження та технічні вимоги.",
+      afterLabel: "Після",
+      afterTitle: "Готовий результат з контролем якості",
+      afterText: "Передаємо завершений етап або об'єкт зі зрозумілою звітністю та фотофіксацією.",
+    },
+    processTag: "Як ми працюємо",
+    processTitle: "Прозорий процес без зайвої бюрократії",
+    steps: [
+      { step: "01", title: "Консультація", text: "Обговорюємо задачі, бюджет, терміни та особливості об'єкта." },
+      { step: "02", title: "Пропозиція", text: "Оцінюємо обсяг робіт і формуємо прозору пропозицію." },
+      { step: "03", title: "Виконання", text: "Професійно реалізуємо проєкт з контролем якості." },
+      { step: "04", title: "Здача", text: "Проводимо фінальну перевірку і передаємо результат клієнту." },
+    ],
+    calculatorTag: "Калькулятор вартості",
+    calculatorTitle: "Отримати попередній розрахунок за 24 години",
+    calculatorText: "Швидкий попередній розрахунок допомагає зрозуміти бюджетний діапазон ще до повного кошторису.",
+    coverageLabel: "Географія досвіду",
+    trustTag: "Блок довіри",
+    trustTitle: "Документи, досвід і прозора ділова репутація",
+    reviewTag: "Відгуки та рекомендації",
+    reviewTitle: "Детальні кейси та реальні рекомендації надаємо за запитом",
+    reviewText: "Ми будуємо довіру не вигаданими обіцянками, а досвідом, прозорістю процесу, реквізитами та якістю виконання.",
+  },
+  aboutPage: {
+    ...siteContent.ru.aboutPage,
+    title: "Будівельний партнер з європейським досвідом",
+    intro: "Ми реалізуємо будівельні, монтажні та інженерні роботи у форматі, зручному і для приватних клієнтів, і для професійних інвесторів.",
+    text: [
+      "ConStrukT VS Company базується на досвіді виконробів, монтажників і координаторів, які працювали на проєктах різного масштабу в Європі.",
+      "Наша задача — не лише якісно будувати, а й грамотно вести весь процес: планування, координацію, комунікацію та фінальну здачу.",
+    ],
+    stats: [
+      { value: "10+", label: "років досвіду спеціалістів" },
+      { value: "EU", label: "проєкти в європейському середовищі" },
+      { value: "24 год", label: "на відповідь і перший розрахунок" },
+    ],
+    valuesTitle: "На чому будується співпраця",
+    values: [
+      { title: "Системне управління", text: "Ми контролюємо послідовність робіт, терміни та відповідальність." },
+      { title: "Якість виконання", text: "Деталі реалізації так само важливі, як і загальний підсумок." },
+      { title: "Пряма комунікація", text: "Клієнт завжди розуміє, хто веде проєкт і що буде далі." },
+      { title: "Гнучкість", text: "Беремо і компактні задачі, і великі індустріальні об'єкти в одному стандарті." },
+    ],
+  },
+  servicesPage: {
+    title: "Будівельні та монтажні послуги від одного партнера",
+    intro: "Від підготовки майданчика до основної будівельної частини та спеціалізованого монтажу: одна відповідальність, один партнер, один стандарт якості.",
+    outroTitle: "Потрібен точніший обсяг?",
+    outroText: "Надішліть запит, і ми підготуємо структуроване рішення, терміни та рамку бюджету.",
+  },
+  contactsPage: {
+    tag: "Контакти",
+    title: "Готові обговорити ваш проєкт",
+    intro: "Надішліть нам заявку з базовими даними. Ми повернемося з першим варіантом рішення та подальшими кроками.",
+    detailsTitle: "Дані компанії",
+    note: "Для розрахунку проєкту найкраще використовувати форму. Юридичні реквізити також зазначені в розділах GDPR і cookies.",
+  },
+  careerPage: {
+    tag: "Кар'єра",
+    title: "Ми зростаємо і шукаємо сильних спеціалістів",
+    intro: "Якщо ви працюєте відповідально, любите якість і вмієте бути частиною команди, нам буде цікаво познайомитися.",
+    openPositionsTag: "Відкриті позиції",
+    openPositionsTitle: "Актуальні можливості в команді",
+    noJobsTitle: "Зараз відкритих позицій немає",
+    noJobsText: "Ви все одно можете надіслати контакт або CV. Коли з'явиться відповідна роль, ми зв'яжемося з вами.",
+    perksTag: "Що пропонуємо",
+    perksTitle: "Як влаштована робота з нами",
+    perks: [
+      { title: "Стабільні проєкти", text: "Робота на реальних об'єктах без випадкових простоїв." },
+      { title: "Чесна оплата", text: "Винагорода відповідно до досвіду, відповідальності та якості роботи." },
+      { title: "Оснащення", text: "Нормальний інструмент, організація робіт і робоче середовище без хаосу." },
+      { title: "Ріст", text: "Довгострокова співпраця та можливості розвитку." },
+    ],
+    applyCall: "Відгукнутися",
+    emailAction: "Надіслати email",
+  },
+  privacyPage: {
+    tag: "Юридична інформація",
+    title: "Конфіденційність та обробка персональних даних",
+    intro: "На цій сторінці описано, як ConStrukT VS Compani s.r.o. обробляє дані з контактних форм і ділової комунікації.",
+    sections: [
+      { title: "1. Оператор даних", text: "Оператором персональних даних є ConStrukT VS Compani s.r.o., IČO 24503215, DIČ CZ24503215, адреса: Sokolská 1883/8, 120 00 Praha 2 - Nové Město, Czech Republic. Контакт: ConStrukT.VS@seznam.cz, datová schránka 49t6e8." },
+      { title: "2. Які дані ми обробляємо", text: "Ми обробляємо дані, які ви самі передаєте через форму: ім'я, телефон, email, місто, тип робіт, площу, строки, посилання на фото та опис проєкту." },
+      { title: "3. Мета обробки", text: "Дані використовуються лише для обробки заявки, підготовки попереднього розрахунку, ділової комунікації та можливого укладення договору." },
+      { title: "4. Правова підстава", text: "Правовою підставою є переддоговірна комунікація, законний інтерес бізнесу та ваша згода при надсиланні форми." },
+      { title: "5. Строк зберігання", text: "Заявки зберігаються лише стільки, скільки необхідно для їх обробки та розумного ведення ділової документації." },
+      { title: "6. Передача даних", text: "Ми не продаємо персональні дані. Вони можуть оброблятися лише технічними постачальниками хостингу та інфраструктури, необхідними для роботи сайту." },
+      { title: "7. Ваші права", text: "Ви можете запросити доступ, виправлення, обмеження або видалення даних, а також звернутися до наглядового органу із захисту даних." },
+    ],
+  },
+  cookiePage: {
+    tag: "Cookies",
+    title: "Інформація про cookies",
+    intro: "Ми використовуємо лише необхідні технічні cookies та зберігаємо ваш вибір щодо згоди, щоб сайт працював коректно і безпечно.",
+    sections: [
+      { title: "1. Необхідні cookies", text: "Необхідні cookies забезпечують базову роботу сайту, безпеку адмінки та збереження вашого вибору щодо cookies." },
+      { title: "2. Збереження вибору", text: "Ми зберігаємо, чи прийняли ви лише необхідні cookies або всі cookies. Ця інформація зберігається локально у вашому браузері." },
+      { title: "3. Аналітика та маркетинг", text: "У поточній версії сайту сторонні аналітичні та рекламні скрипти не використовуються. Якщо вони з'являться пізніше, керування cookies буде розширено." },
+      { title: "4. Як змінити вибір", text: "Ви можете знову відкрити налаштування через посилання «Налаштування cookies» у футері сайту." },
+    ],
+  },
+  footer: {
+    description: "Сучасний будівельний та монтажний партнер для реконструкцій, промислових об'єктів та інженерних робіт у європейському стандарті.",
+    navigationTitle: "Навігація",
+    contactTitle: "Контакт",
+    legalTitle: "Юридична інформація",
+    privacy: "GDPR / конфіденційність",
+    cookies: "Інформація про cookies",
+    rights: "Усі права захищені.",
+    cookieSettings: "Налаштування cookies",
+  },
+  form: {
+    estimateTag: "Smart estimate",
+    estimateTitle: "Попередній калькулятор",
+    estimateText: "Одразу показує орієнтовний діапазон вартості за типом робіт, площею, містом та строками.",
+    typeLabel: "Тип робіт",
+    areaLabel: "Площа, м²",
+    cityLabel: "Місто",
+    deadlineLabel: "Терміни",
+    resultLabel: "Орієнтовна вартість",
+    resultHint: "Точний розрахунок підтверджуємо після уточнення проєкту, фото та обсягу робіт.",
+    fastTag: "Швидкий контакт",
+    fastTitle: "Надіслати запит",
+    fastText: "Залиште контакти та короткий опис. Відповімо з першим розрахунком протягом 24 годин.",
+    nameLabel: "Ім'я",
+    phoneLabel: "Телефон",
+    emailLabel: "Email",
+    photoLabel: "Фото / посилання на об'єкт",
+    detailsLabel: "Опис проєкту",
+    detailsPlaceholder: "Опишіть тип об'єкта, обсяг робіт, строки та особливі вимоги.",
+    consent: "Погоджуюсь на обробку персональних даних для відповіді на мій запит.",
+    submit: "Надіслати запит",
+    sending: "Надсилаємо...",
+    success: "Дякуємо. Ми зв'яжемося з вами протягом 24 годин.",
+    error: "Не вдалося надіслати запит. Спробуйте ще раз.",
+    workTypes: [
+      { value: "power", label: "Силова електрика", rate: 5900 },
+      { value: "lowcurrent", label: "Слабкострумова електроінсталяція", rate: 4800 },
+      { value: "solar", label: "Фотовольтаїка та теплові насоси", rate: 7800 },
+      { value: "turnkey", label: "Будівництво будинків під ключ", rate: 12500 },
+      { value: "fences", label: "Паркани та огорожі", rate: 4200 },
+      { value: "interior", label: "Інтер'єрні роботи", rate: 6200 },
+      { value: "exterior", label: "Екстер'єрні роботи", rate: 5600 },
+      { value: "panels", label: "Монтаж сендвіч-панелей", rate: 5100 },
+      { value: "drilling", label: "Алмазне буріння", rate: 2900 },
+      { value: "earthworks", label: "Земляні роботи", rate: 3700 },
+    ],
+    cities: [
+      { value: "praha", label: "Прага", factor: 1.15 },
+      { value: "brno", label: "Брно", factor: 1.08 },
+      { value: "ostrava", label: "Острава", factor: 1.04 },
+      { value: "other", label: "Інше місто", factor: 1 },
+    ],
+    deadlines: [
+      { value: "urgent", label: "Терміново", factor: 1.22 },
+      { value: "standard", label: "Стандартний термін", factor: 1 },
+      { value: "planned", label: "Планово / без поспіху", factor: 0.94 },
+    ],
+  },
+  cookieBanner: {
+    title: "Ми використовуємо технічні cookies",
+    text: "Сайт зберігає лише необхідні технічні cookies і ваш вибір згоди, щоб працювати коректно та безпечно.",
+    essential: "Лише необхідні",
+    acceptAll: "Прийняти все",
+    acceptNecessary: "Лише необхідні",
+    settings: "Налаштування",
+    saved: "Вибір cookies збережено.",
+  },
+};
+
 export function getSiteContent(locale: Locale): SiteDictionary {
+  if (locale === "uk") {
+    return ukContent;
+  }
+
   return siteContent[locale];
 }

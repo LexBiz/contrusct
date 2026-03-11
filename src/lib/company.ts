@@ -4,7 +4,7 @@ export const company = {
   street: "Sokolska 1883/8",
   cityLine: "120 00 Praha 2 - Nove Mesto",
   countryCs: "Ceska republika",
-  countryUk: "Czech Republic",
+  countryUk: "Чеська Республіка",
   countryEn: "Czech Republic",
   countryDe: "Tschechische Republik",
   ico: "24503215",
