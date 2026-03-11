@@ -10,6 +10,43 @@ type PageProps = {
   locale: Locale;
 };
 
+function founderCopy(locale: Locale) {
+  if (locale === "cs") {
+    return {
+      tag: "Zakladatel",
+      title: company.founderName,
+      text: "Zakladatelem společnosti je Cтрук Василь. Jeho zkušenosti z evropských stavebních projektů formují přístup firmy ke kvalitě, disciplíně a odpovědnosti za výsledek.",
+    };
+  }
+  if (locale === "en") {
+    return {
+      tag: "Founder",
+      title: company.founderName,
+      text: "The company was founded by Cтрук Василь. His experience on European construction projects shapes the company's standard for quality, discipline and accountability.",
+    };
+  }
+  if (locale === "de") {
+    return {
+      tag: "Gründer",
+      title: company.founderName,
+      text: "Das Unternehmen wurde von Cтрук Василь gegründet. Seine Erfahrung auf europäischen Bauprojekten prägt den Anspruch der Firma an Qualität, Disziplin und Verantwortung.",
+    };
+  }
+  if (locale === "uk") {
+    return {
+      tag: "Засновник",
+      title: company.founderName,
+      text: "Засновник компанії — Cтрук Василь. Саме його досвід на європейських будівельних проєктах сформував підхід компанії до якості, дисципліни та відповідальності за результат.",
+    };
+  }
+
+  return {
+    tag: "Основатель",
+    title: company.founderName,
+    text: "Основатель компании — Cтрук Василь. Именно его опыт на европейских строительных проектах сформировал подход компании к качеству, дисциплине и ответственности за результат.",
+  };
+}
+
 const serviceVisuals = [
   {
     image:
@@ -79,6 +116,7 @@ function SectionHead({
 export function HomePage({ locale }: PageProps) {
   const content = getSiteContent(locale);
   const home = content.home;
+  const founder = founderCopy(locale);
 
   return (
     <div className="site-page">
@@ -159,6 +197,11 @@ export function HomePage({ locale }: PageProps) {
                 {text}
               </p>
             ))}
+            <article className="founder-card">
+              <span className="service-index">{founder.tag}</span>
+              <h3>{founder.title}</h3>
+              <p>{founder.text}</p>
+            </article>
           </div>
           <div className="about-cards">
             {home.aboutCards.map((card) => (
@@ -317,6 +360,7 @@ export function HomePage({ locale }: PageProps) {
 export function AboutPage({ locale }: PageProps) {
   const content = getSiteContent(locale);
   const page = content.aboutPage;
+  const founder = founderCopy(locale);
 
   return (
     <section className="inner-page">
@@ -329,6 +373,11 @@ export function AboutPage({ locale }: PageProps) {
                 {text}
               </p>
             ))}
+            <article className="founder-card founder-card-inline">
+              <span className="service-index">{founder.tag}</span>
+              <h3>{founder.title}</h3>
+              <p>{founder.text}</p>
+            </article>
           </div>
           <div className="page-stats-grid">
             {page.stats.map((stat) => (

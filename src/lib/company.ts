@@ -15,5 +15,7 @@ export const company = {
   experience: "10+ years",
   registryCourt: "Mestsky soud v Praze, C 442315",
   legalForm: "Spolecnost s rucenim omezenym",
+  founderName: "Cтрук Василь",
+  founderTitle: "Founder",
 } as const;
 
