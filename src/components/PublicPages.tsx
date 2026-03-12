@@ -11,91 +11,84 @@ type PageProps = {
 };
 
 function founderCopy(locale: Locale) {
+  const founderName = locale === "ru" || locale === "uk" ? "Струк Василь" : "Vasyl Struk";
+
   if (locale === "cs") {
     return {
       tag: "Zakladatel",
-      title: company.founderName,
-      text: "Zakladatelem společnosti je Cтрук Василь. Jeho zkušenosti z evropských stavebních projektů formují přístup firmy ke kvalitě, disciplíně a odpovědnosti za výsledek.",
+      title: founderName,
+      text: `Zakladatelem společnosti je ${founderName}. Jeho zkušenosti z evropských stavebních projektů formují přístup firmy ke kvalitě, disciplíně a odpovědnosti za výsledek.`,
     };
   }
   if (locale === "en") {
     return {
       tag: "Founder",
-      title: company.founderName,
-      text: "The company was founded by Cтрук Василь. His experience on European construction projects shapes the company's standard for quality, discipline and accountability.",
+      title: founderName,
+      text: `The company was founded by ${founderName}. His experience on European construction projects shapes the company's standard for quality, discipline and accountability.`,
     };
   }
   if (locale === "de") {
     return {
       tag: "Gründer",
-      title: company.founderName,
-      text: "Das Unternehmen wurde von Cтрук Василь gegründet. Seine Erfahrung auf europäischen Bauprojekten prägt den Anspruch der Firma an Qualität, Disziplin und Verantwortung.",
+      title: founderName,
+      text: `Das Unternehmen wurde von ${founderName} gegründet. Seine Erfahrung auf europäischen Bauprojekten prägt den Anspruch der Firma an Qualität, Disziplin und Verantwortung.`,
     };
   }
   if (locale === "uk") {
     return {
       tag: "Засновник",
-      title: company.founderName,
-      text: "Засновник компанії — Cтрук Василь. Саме його досвід на європейських будівельних проєктах сформував підхід компанії до якості, дисципліни та відповідальності за результат.",
+      title: founderName,
+      text: `Засновник компанії — ${founderName}. Саме його досвід на європейських будівельних проєктах сформував підхід компанії до якості, дисципліни та відповідальності за результат.`,
     };
   }
 
   return {
     tag: "Основатель",
-    title: company.founderName,
-    text: "Основатель компании — Cтрук Василь. Именно его опыт на европейских строительных проектах сформировал подход компании к качеству, дисциплине и ответственности за результат.",
+    title: founderName,
+    text: `Основатель компании — ${founderName}. Именно его опыт на европейских строительных проектах сформировал подход компании к качеству, дисциплине и ответственности за результат.`,
   };
 }
 
 const serviceVisuals = [
   {
-    image: "/high-current-installation.jpg",
+    image: "/Silnoproud.jpg",
     alt: "High-current electrical installation",
-    fit: "contain",
   },
   {
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
     alt: "Low-current cabling and networking",
-    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80",
     alt: "Photovoltaics and heat pump systems",
-    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1676802037786-3697d60497ae?auto=format&fit=crop&w=1600&q=80",
     alt: "Turnkey house construction",
-    fit: "cover",
   },
   {
     image:
       "https://images.unsplash.com/photo-1747407823747-bcb76a476350?auto=format&fit=crop&w=1600&q=80",
     alt: "Industrial fence installation",
-    fit: "cover",
   },
   {
     image: "/interior-exterior-works.jpg",
     alt: "Interior and exterior construction works",
-    fit: "contain",
   },
   {
     image: "/sandwich-panel-installation.jpg",
     alt: "Sandwich panel construction",
-    fit: "contain",
   },
   {
     image: "/diamond-drilling.jpg",
     alt: "Diamond drilling and technical works",
-    fit: "cover",
   },
   {
     image: "/earthworks.jpg",
     alt: "Earthworks and site preparation",
-    fit: "contain",
   },
 ] as const;
 
@@ -234,11 +227,7 @@ export function HomePage({ locale }: PageProps) {
                     return (
                       <>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={visual.image}
-                          alt={visual.alt}
-                          className={visual.fit === "contain" ? "service-image-contain" : undefined}
-                        />
+                        <img src={visual.image} alt={visual.alt} />
                       </>
                     );
                   })()}
@@ -434,11 +423,7 @@ export function ServicesPage({ locale }: PageProps) {
                   return (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={visual.image}
-                        alt={visual.alt}
-                        className={visual.fit === "contain" ? "service-image-contain" : undefined}
-                      />
+                      <img src={visual.image} alt={visual.alt} />
                     </>
                   );
                 })()}
@@ -468,11 +453,7 @@ export function ServicesPage({ locale }: PageProps) {
                   return (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={visual.image}
-                        alt={visual.alt}
-                        className={visual.fit === "contain" ? "service-image-contain" : undefined}
-                      />
+                      <img src={visual.image} alt={visual.alt} />
                     </>
                   );
                 })()}

@@ -187,6 +187,31 @@ export async function addVacancy(
   });
 }
 
+export async function updateVacancy(
+  id: string,
+  vacancy: Partial<Omit<Vacancy, "id" | "createdAt">>,
+): Promise<Vacancy | null> {
+  return withFileLock(vacanciesFile, async () => {
+    const rows = (await readJson<Vacancy>(vacanciesFile)).map((item) => normalizeVacancy(item));
+    const index = rows.findIndex((item) => item.id === id);
+    if (index === -1) {
+      return null;
+    }
+
+    const current = rows[index];
+    const nextEntry = normalizeVacancy({
+      ...current,
+      ...vacancy,
+      id: current.id,
+      createdAt: current.createdAt,
+    });
+
+    rows[index] = nextEntry;
+    await writeJson(vacanciesFile, rows);
+    return nextEntry;
+  });
+}
+
 export async function removeVacancy(id: string) {
   await withFileLock(vacanciesFile, async () => {
     const rows = (await readJson<Vacancy>(vacanciesFile)).map((item) =>
