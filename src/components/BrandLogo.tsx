@@ -21,6 +21,7 @@ export function BrandLogo({
 }: BrandLogoProps) {
   const content = getSiteContent(locale);
   const target = href ?? localePath(locale, "/");
+  const shouldPrioritize = compact || hero;
 
   return (
     <Link
@@ -31,7 +32,16 @@ export function BrandLogo({
     >
       <span className={`brand-logo-visual ${hero ? "brand-logo-visual-hero" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.png" alt={content.brand.eyebrow} className="brand-logo-image" />
+        <img
+          src="/logo.png"
+          alt={content.brand.eyebrow}
+          className="brand-logo-image"
+          width="512"
+          height="512"
+          loading={shouldPrioritize ? "eager" : "lazy"}
+          fetchPriority={shouldPrioritize ? "high" : "auto"}
+          decoding="async"
+        />
         <span className="brand-logo-glow" />
         <span className="brand-logo-ring" />
       </span>

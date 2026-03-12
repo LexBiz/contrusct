@@ -125,6 +125,7 @@ export function HomePage({ locale }: PageProps) {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80"
           >
             <source
@@ -227,7 +228,7 @@ export function HomePage({ locale }: PageProps) {
                     return (
                       <>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={visual.image} alt={visual.alt} />
+                        <img src={visual.image} alt={visual.alt} loading="lazy" decoding="async" />
                       </>
                     );
                   })()}
@@ -273,7 +274,7 @@ export function HomePage({ locale }: PageProps) {
             {home.projects.map((project) => (
               <article className="project-card" key={project.title}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
                 <div className="project-card-body">
                   <h3>{project.title}</h3>
                   <p>{project.subtitle}</p>
@@ -423,7 +424,7 @@ export function ServicesPage({ locale }: PageProps) {
                   return (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={visual.image} alt={visual.alt} />
+                      <img src={visual.image} alt={visual.alt} loading="lazy" decoding="async" />
                     </>
                   );
                 })()}
@@ -453,7 +454,7 @@ export function ServicesPage({ locale }: PageProps) {
                   return (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={visual.image} alt={visual.alt} />
+                      <img src={visual.image} alt={visual.alt} loading="lazy" decoding="async" />
                     </>
                   );
                 })()}
